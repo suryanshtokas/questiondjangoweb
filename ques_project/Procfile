@@ -1,0 +1,1 @@
+web: gunicorn ques_project.wsgi
