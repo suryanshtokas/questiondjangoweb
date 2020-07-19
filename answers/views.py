@@ -17,7 +17,7 @@ class AnswersDetailView(LoginRequiredMixin, DetailView):
     template_name = 'answers_detail.html'
     login_url = 'login'
 
-class AnswersUpdateView(LoginRequiredMixin, UpdateView):
+class AnswersUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Answers
     fields = ('title', 'answer')
     template_name = 'answers_edit.html'
@@ -36,7 +36,7 @@ class AnswersDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         obj = self.get_object()
         return obj.author == self.request.user
 
-class AnswersCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class AnswersCreateView(LoginRequiredMixin, CreateView):
     model = Answers
     template_name = 'answers_new.html'
     fields = ('title', 'answer', 'article')
@@ -45,6 +45,4 @@ class AnswersCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    def test_func(self):
-        obj = self.get_object()
-        return obj.author == self.request.user
+
