@@ -12,9 +12,9 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="{% url 'home' %}">Home</a>&nbsp;&nbsp;
-      <a class="navbar-brand" href="{% url 'article_list' %}">Questions</a>&nbsp;&nbsp;
-      <a class="navbar-brand" href="{% url 'answer_list' %}">Answers</a>
+      <<u>a class="navbar-brand" href="{% url 'home' %}">Home</a></u>&nbsp;&nbsp;
+      <u></u><a class="navbar-brand" href="{% url 'article_list' %}">Questions</a></u>&nbsp;&nbsp;
+      <u></u><a class="navbar-brand" href="{% url 'answer_list' %}">Answers</a></u>
       {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a href="{% url 'article_new' %}">+ New Question  </a></li>
