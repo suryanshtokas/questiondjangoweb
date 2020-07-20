@@ -9,7 +9,7 @@ from .models import Answers
 # Create your views here.
 class AnswersListView(LoginRequiredMixin, ListView):
     model = Answers
-    template_name = 'answers_list.html'
+    template_name = 'article_list.html'
     login_url = 'login'
 
 class AnswersDetailView(LoginRequiredMixin, DetailView):
