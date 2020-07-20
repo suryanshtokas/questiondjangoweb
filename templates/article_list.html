@@ -16,15 +16,7 @@
         <a href="{% url 'answer_list' %}"> Answer</a>
         
       </div>
-      <div class="card-footer">
-        {% for answer in all_answers_list %}
-          <p>
-            <span class="font-weight-bold">{{ answer.title }}</span> &middot;
-            <span class="font-weight-bold">{{ answer.author }} &middot;</span>
-            {{ answer.answer }}
-          </p>
-        {% endfor %}
-      </div>     
+    
     </div>
     <br />
   {% endfor %}

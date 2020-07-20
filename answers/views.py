@@ -9,9 +9,9 @@ from .models import Answers
 # Create your views here.
 class AnswersListView(LoginRequiredMixin, ListView):
     model = Answers
-    template_name = 'article_list.html'
+    template_name = 'answers_list.html'
     login_url = 'login'
-    context_object_name = 'all_answers_list'
+    
 
 class AnswersDetailView(LoginRequiredMixin, DetailView):
     model = Answers
